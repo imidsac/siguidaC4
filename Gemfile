@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
@@ -38,3 +39,36 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'simple_form'
+gem 'less-rails'
+gem 'therubyracer', :require => 'v8'
+
+gem 'twitter-bootswatch-rails', '~> 3.2'
+#gem 'twitter-bootswatch-rails-helpers', '~> 3.1'
+gem 'twitter-bootswatch-rails-fontawesome'
+gem 'twitter-bootswatch-rails-helpers'
+
+group :test, :development do
+  # RSpec
+  gem 'rspec-rails'
+
+  # Factory girl
+  gem 'factory_girl_rails'
+  
+  # Capybara
+  gem 'capybara'
+  
+  # Email spec
+  #gem "email_spec", ">= 1.4.0"
+
+# uncomment to gen with erb
+#gem 'haml-rails'
+  gem 'unicorn-rails'
+end
+
+gem 'quiet_assets', :group => :development
+
+gem 'devise'
+gem 'paperclip'
+gem 'jquery-fileupload-rails'
+gem 'wicked'
