@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom centre:</strong>
+  <%= @centre.nom_centre %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @centre.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @centre.address %>
+</p>
+
+<%= link_to 'Edit', edit_centre_path(@centre) %> |
+<%= link_to 'Back', centres_path %>

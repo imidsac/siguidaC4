@@ -1,0 +1,71 @@
+<h1>Listing personnels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>N decision</th>
+      <th>N mle</th>
+      <th>N nina</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date nai</th>
+      <th>Lieu nai</th>
+      <th>Sexe</th>
+      <th>Situ f</th>
+      <th>Nb enf</th>
+      <th>Corps</th>
+      <th>Em occ</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Compte banc</th>
+      <th>Address</th>
+      <th>Date recr</th>
+      <th>Salaire b</th>
+      <th>Regime matrimonial</th>
+      <th>Nom prenom pere</th>
+      <th>Date nai pere</th>
+      <th>Nom prenom mere</th>
+      <th>Date nai mere</th>
+      <th>Etat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personnels.each do |personnel| %>
+      <tr>
+        <td><%= personnel.n_decision %></td>
+        <td><%= personnel.n_mle %></td>
+        <td><%= personnel.n_nina %></td>
+        <td><%= personnel.nom %></td>
+        <td><%= personnel.prenom %></td>
+        <td><%= personnel.date_nai %></td>
+        <td><%= personnel.lieu_nai %></td>
+        <td><%= personnel.sexe %></td>
+        <td><%= personnel.situ_f %></td>
+        <td><%= personnel.nb_enf %></td>
+        <td><%= personnel.corps %></td>
+        <td><%= personnel.em_occ %></td>
+        <td><%= personnel.phone %></td>
+        <td><%= personnel.email %></td>
+        <td><%= personnel.compte_banc %></td>
+        <td><%= personnel.address %></td>
+        <td><%= personnel.date_recr %></td>
+        <td><%= personnel.salaire_b %></td>
+        <td><%= personnel.regime_matrimonial %></td>
+        <td><%= personnel.nom_prenom_pere %></td>
+        <td><%= personnel.date_nai_pere %></td>
+        <td><%= personnel.nom_prenom_mere %></td>
+        <td><%= personnel.date_nai_mere %></td>
+        <td><%= personnel.etat %></td>
+        <td><%= link_to 'Show', personnel %></td>
+        <td><%= link_to 'Edit', edit_personnel_path(personnel) %></td>
+        <td><%= link_to 'Destroy', personnel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personnel', new_personnel_path %>
