@@ -97,10 +97,12 @@ gem 'sunspot_rails', '~> 2.1.1'
 #gem 'sunspot_solr', '~> 2.1.1'
 group :development do
     gem 'sunspot_solr', '~> 2.1.1'
+    gem 'better_errors', '~> 2.0.0'
   end
 
 
 gem 'progress_bar'
 gem 'ransack', '~> 1.5.1'
 gem 'jquery-turbolinks'
+gem "binding_of_caller"
 

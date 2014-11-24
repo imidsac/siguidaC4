@@ -1,39 +1,43 @@
-<h1>Listing personnels</h1>
-
-<table>
+<%- model_class = Personnel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>N decision</th>
-      <th>N mle</th>
-      <th>N nina</th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Date nai</th>
-      <th>Lieu nai</th>
-      <th>Sexe</th>
-      <th>Situ f</th>
-      <th>Nb enf</th>
-      <th>Corps</th>
-      <th>Em occ</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Compte banc</th>
-      <th>Address</th>
-      <th>Date recr</th>
-      <th>Salaire b</th>
-      <th>Regime matrimonial</th>
-      <th>Nom prenom pere</th>
-      <th>Date nai pere</th>
-      <th>Nom prenom mere</th>
-      <th>Date nai mere</th>
-      <th>Etat</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:n_decision) %></th>
+      <th><%= model_class.human_attribute_name(:n_mle) %></th>
+      <th><%= model_class.human_attribute_name(:n_nina) %></th>
+      <th><%= model_class.human_attribute_name(:nom) %></th>
+      <th><%= model_class.human_attribute_name(:prenom) %></th>
+      <th><%= model_class.human_attribute_name(:date_nai) %></th>
+      <th><%= model_class.human_attribute_name(:lieu_nai) %></th>
+      <th><%= model_class.human_attribute_name(:sexe) %></th>
+      <th><%= model_class.human_attribute_name(:situ_f) %></th>
+      <th><%= model_class.human_attribute_name(:nb_enf) %></th>
+      <th><%= model_class.human_attribute_name(:corps) %></th>
+      <th><%= model_class.human_attribute_name(:em_occ) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:compte_banc) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:date_recr) %></th>
+      <th><%= model_class.human_attribute_name(:salaire_b) %></th>
+      <th><%= model_class.human_attribute_name(:regime_matrimonial) %></th>
+      <th><%= model_class.human_attribute_name(:nom_prenom_pere) %></th>
+      <th><%= model_class.human_attribute_name(:date_nai_pere) %></th>
+      <th><%= model_class.human_attribute_name(:nom_prenom_mere) %></th>
+      <th><%= model_class.human_attribute_name(:date_nai_mere) %></th>
+      <th><%= model_class.human_attribute_name(:etat) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @personnels.each do |personnel| %>
       <tr>
+        <td><%= link_to personnel.id, personnel_path(personnel) %></td>
         <td><%= personnel.n_decision %></td>
         <td><%= personnel.n_mle %></td>
         <td><%= personnel.n_nina %></td>
@@ -58,14 +62,21 @@
         <td><%= personnel.nom_prenom_mere %></td>
         <td><%= personnel.date_nai_mere %></td>
         <td><%= personnel.etat %></td>
-        <td><%= link_to 'Show', personnel %></td>
-        <td><%= link_to 'Edit', edit_personnel_path(personnel) %></td>
-        <td><%= link_to 'Destroy', personnel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l personnel.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_personnel_path(personnel), :class => 'btn btn-primary btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      personnel_path(personnel),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-danger btn-xs' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Personnel', new_personnel_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_personnel_path,
+            :class => 'btn btn-primary' %>

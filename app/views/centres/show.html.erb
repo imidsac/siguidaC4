@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Centre -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <strong>Nom centre:</strong>
-  <%= @centre.nom_centre %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nom_centre) %>:</strong></dt>
+  <dd><%= @centre.nom_centre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @centre.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @centre.address %></dd>
+</dl>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @centre.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @centre.address %>
-</p>
-
-<%= link_to 'Edit', edit_centre_path(@centre) %> |
-<%= link_to 'Back', centres_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              centres_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_centre_path(@centre), :class => 'btn btn-primary' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              centre_path(@centre),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,124 +1,67 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Personnel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <strong>N decision:</strong>
-  <%= @personnel.n_decision %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:n_decision) %>:</strong></dt>
+  <dd><%= @personnel.n_decision %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_mle) %>:</strong></dt>
+  <dd><%= @personnel.n_mle %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_nina) %>:</strong></dt>
+  <dd><%= @personnel.n_nina %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom) %>:</strong></dt>
+  <dd><%= @personnel.nom %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prenom) %>:</strong></dt>
+  <dd><%= @personnel.prenom %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai) %>:</strong></dt>
+  <dd><%= @personnel.date_nai %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lieu_nai) %>:</strong></dt>
+  <dd><%= @personnel.lieu_nai %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sexe) %>:</strong></dt>
+  <dd><%= @personnel.sexe %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:situ_f) %>:</strong></dt>
+  <dd><%= @personnel.situ_f %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nb_enf) %>:</strong></dt>
+  <dd><%= @personnel.nb_enf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:corps) %>:</strong></dt>
+  <dd><%= @personnel.corps %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:em_occ) %>:</strong></dt>
+  <dd><%= @personnel.em_occ %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @personnel.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @personnel.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:compte_banc) %>:</strong></dt>
+  <dd><%= @personnel.compte_banc %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @personnel.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_recr) %>:</strong></dt>
+  <dd><%= @personnel.date_recr %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salaire_b) %>:</strong></dt>
+  <dd><%= @personnel.salaire_b %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:regime_matrimonial) %>:</strong></dt>
+  <dd><%= @personnel.regime_matrimonial %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_pere) %>:</strong></dt>
+  <dd><%= @personnel.nom_prenom_pere %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai_pere) %>:</strong></dt>
+  <dd><%= @personnel.date_nai_pere %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_mere) %>:</strong></dt>
+  <dd><%= @personnel.nom_prenom_mere %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai_mere) %>:</strong></dt>
+  <dd><%= @personnel.date_nai_mere %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:etat) %>:</strong></dt>
+  <dd><%= @personnel.etat %></dd>
+</dl>
 
-<p>
-  <strong>N mle:</strong>
-  <%= @personnel.n_mle %>
-</p>
-
-<p>
-  <strong>N nina:</strong>
-  <%= @personnel.n_nina %>
-</p>
-
-<p>
-  <strong>Nom:</strong>
-  <%= @personnel.nom %>
-</p>
-
-<p>
-  <strong>Prenom:</strong>
-  <%= @personnel.prenom %>
-</p>
-
-<p>
-  <strong>Date nai:</strong>
-  <%= @personnel.date_nai %>
-</p>
-
-<p>
-  <strong>Lieu nai:</strong>
-  <%= @personnel.lieu_nai %>
-</p>
-
-<p>
-  <strong>Sexe:</strong>
-  <%= @personnel.sexe %>
-</p>
-
-<p>
-  <strong>Situ f:</strong>
-  <%= @personnel.situ_f %>
-</p>
-
-<p>
-  <strong>Nb enf:</strong>
-  <%= @personnel.nb_enf %>
-</p>
-
-<p>
-  <strong>Corps:</strong>
-  <%= @personnel.corps %>
-</p>
-
-<p>
-  <strong>Em occ:</strong>
-  <%= @personnel.em_occ %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @personnel.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @personnel.email %>
-</p>
-
-<p>
-  <strong>Compte banc:</strong>
-  <%= @personnel.compte_banc %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @personnel.address %>
-</p>
-
-<p>
-  <strong>Date recr:</strong>
-  <%= @personnel.date_recr %>
-</p>
-
-<p>
-  <strong>Salaire b:</strong>
-  <%= @personnel.salaire_b %>
-</p>
-
-<p>
-  <strong>Regime matrimonial:</strong>
-  <%= @personnel.regime_matrimonial %>
-</p>
-
-<p>
-  <strong>Nom prenom pere:</strong>
-  <%= @personnel.nom_prenom_pere %>
-</p>
-
-<p>
-  <strong>Date nai pere:</strong>
-  <%= @personnel.date_nai_pere %>
-</p>
-
-<p>
-  <strong>Nom prenom mere:</strong>
-  <%= @personnel.nom_prenom_mere %>
-</p>
-
-<p>
-  <strong>Date nai mere:</strong>
-  <%= @personnel.date_nai_mere %>
-</p>
-
-<p>
-  <strong>Etat:</strong>
-  <%= @personnel.etat %>
-</p>
-
-<%= link_to 'Edit', edit_personnel_path(@personnel) %> |
-<%= link_to 'Back', personnels_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              personnels_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_personnel_path(@personnel), :class => 'btn btn-primary' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              personnel_path(@personnel),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
