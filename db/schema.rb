@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018115835) do
+ActiveRecord::Schema.define(version: 20141126124148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,9 +56,18 @@ ActiveRecord::Schema.define(version: 20141018115835) do
     t.string   "nom_prenom_mere"
     t.datetime "date_nai_mere"
     t.string   "etat"
+    t.integer  "service_id"
+    t.integer  "centre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
+
+  add_index "personnels", ["centre_id"], name: "index_personnels_on_centre_id", using: :btree
+  add_index "personnels", ["service_id"], name: "index_personnels_on_service_id", using: :btree
 
   create_table "services", force: true do |t|
     t.string   "nom_servie"

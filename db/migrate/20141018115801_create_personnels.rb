@@ -25,6 +25,8 @@ class CreatePersonnels < ActiveRecord::Migration
       t.string :nom_prenom_mere
       t.datetime :date_nai_mere
       t.string :etat
+      t.references :service, index: true
+      t.references :centre, index: true
 
       t.timestamps
     end
