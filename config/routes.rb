@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :deces
+
+  resources :mariages
+
+  resources :naissances
+
   get 'welcome/home'
   root 'welcome#home'
 

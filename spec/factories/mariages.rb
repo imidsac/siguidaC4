@@ -1,0 +1,36 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :mariage do
+    nom_mari "MyString"
+    prenom_mari "MyString"
+    date_nai_mari "2014-11-27 13:11:04"
+    lieu_nai_mari "MyString"
+    profession_mari "MyString"
+    domicil_mari "MyString"
+    nom_prenom_pere_mari "MyString"
+    nom_prenom_mere_mari "MyString"
+    nom_prenom_tm_mari "MyString"
+    date_nai_tm_mari "2014-11-27 13:11:04"
+    lieu_nai_tm_mari "MyString"
+    domicil_tm_mari "MyString"
+    nom_marie "MyString"
+    prenom_marie "MyString"
+    date_nai_marie "2014-11-27 13:11:04"
+    lieu_nai_marie "MyString"
+    profession_marie "MyString"
+    domicil_marie "MyString"
+    nom_prenom_pere_marie "MyString"
+    nom_prenom_mere_marie "MyString"
+    consente_parent "MyString"
+    nom_prenom_tm_marie "MyString"
+    date_nai_tm_marie "2014-11-27 13:11:04"
+    lieu_nai_tm_marie "MyString"
+    domicil_tm_marie "MyString"
+    dot "9.99"
+    nom_prenom_officie "MyString"
+    qualite_officie "MyString"
+    date_officie "2014-11-27 13:11:04"
+    n_volet "MyString"
+  end
+end

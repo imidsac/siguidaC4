@@ -1,29 +1,68 @@
 <%= simple_form_for @personnel, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.file_field :cover %>
-  <%= f.input :n_decision %>
-  <%= f.input :n_mle %>
-  <%= f.input :n_nina %>
-  <%= f.input :nom %>
-  <%= f.input :prenom %>
-  <%= f.input :date_nai %>
-  <%= f.input :lieu_nai %>
-  <%= f.input :sexe %>
-  <%= f.input :situ_f %>
-  <%= f.input :nb_enf %>
-  <%= f.input :corps %>
-  <%= f.input :em_occ %>
-  <%= f.input :phone %>
-  <%= f.input :email %>
-  <%= f.input :compte_banc %>
-  <%= f.input :address %>
-  <%= f.input :date_recr %>
-  <%= f.input :salaire_b %>
-  <%= f.input :regime_matrimonial %>
-  <%= f.input :nom_prenom_pere %>
-  <%= f.input :date_nai_pere %>
-  <%= f.input :nom_prenom_mere %>
-  <%= f.input :date_nai_mere %>
-  <%= f.input :etat %>
+ 
+  <div class="row row-2">
+    <div class="col-sm-4">
+      <% if @personnel.cover.exists? %>
+          <%= image_tag @personnel.cover.url(:medium), :class=>"img-responsive img-thumbnail img-circle" %>
+        <% end %>
+      <%= f.file_field :cover, :label => 'Choisissez un photo' %>
+     
+    </div>
+    <div class="col-sm-4">
+      <!--Information  -->
+      <%= f.association :centre, label_method: :nom_centre %>
+    </div>
+    <div class="col-sm-4">
+      <!--Information  -->
+      <%= f.association :service, label_method: :nom_service %>
+
+    </div>
+  </div><!-- row-2 -->
+
+
+<hr />
+
+  <div class="row row-1">
+    <div class="col-sm-4">
+       <!--Information personnel -->
+      <%= f.input :n_decision %>
+      <%= f.input :n_mle %>
+      <%= f.input :n_nina %>
+      <%= f.input :nom %>
+      <%= f.input :prenom %>
+      <%= f.input :date_nai %>
+      <%= f.input :lieu_nai %>
+      <%= f.input :sexe %>
+      
+    </div>
+    <div class="col-sm-4">
+      <!--Information personnel -->
+      <%= f.input :situ_f %>
+      <%= f.input :nb_enf %>
+      <%= f.input :corps %>
+      <%= f.input :em_occ %>
+      <%= f.input :phone %>
+      <%= f.input :email %>
+      <%= f.input :compte_banc %>
+      <%= f.input :address %>
+      
+    </div>
+    <div class="col-sm-4">
+      <%= f.input :date_recr %>
+      <%= f.input :salaire_b %>
+      <%= f.input :regime_matrimonial %>
+      <%= f.input :nom_prenom_pere %>
+      <%= f.input :date_nai_pere %>
+      <%= f.input :nom_prenom_mere %>
+      <%= f.input :date_nai_mere %>
+     
+    </div>
+  </div><!-- row-1 -->
+
+  
+
+<hr/>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

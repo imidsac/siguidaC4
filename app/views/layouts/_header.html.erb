@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to 'MARIE DE LA COMMUNE IV', welcome_home_path, :class=>"navbar-brand" %>
+          <%= link_to 'MAIRIE DE LA COMMUNE IV', welcome_home_path, :class=>"navbar-brand" %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -19,16 +19,29 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">personnels <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Crée', new_personnel_path %></li>
-                <li><%= link_to 'Liste des personnels', personnels_path() %></li>
+                <li><%= link_to 'Liste des personnels', personnels_path() %></li>             
+    
                 <li class="divider"></li>                
-                <li class="dropdown-header">FOURNISSEURS LIBRES</li>
-                <li><%= link_to 'Liste des personnels', '#' %></li>
-                <li><%= link_to 'personnels nom payées', '#' %></li>
-                
-                <li class="divider"></li>                
-                <li class="dropdown-header">FOURNISSEURS ABONNÉES</li>
+                <li class="dropdown-header">PERSONNLS EN CONGÉ</li>
                 <li><%= link_to 'Liste des personnels', personnels_path(:cadre => true) %></li>
-                <li><%= link_to 'personnels nom payées', '#' %></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Centres <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Crée', new_centre_path %></li>
+                <li><%= link_to 'Liste des centres', centres_path() %></li>             
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Etat civil <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Acte de Naissance', naissances_path() %></li>
+                <li><%= link_to 'Acte de Mariage', mariages_path() %></li>
+                <li><%= link_to 'Acte de Decé', deces_path() %></li>
+                        
               </ul>
             </li>
            

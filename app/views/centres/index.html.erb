@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:nom_centre) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+  
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= centre.nom_centre %></td>
         <td><%= centre.phone %></td>
         <td><%= centre.address %></td>
-        <td><%=l centre.created_at %></td>
+    
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_centre_path(centre), :class => 'btn btn-primary btn-xs' %>

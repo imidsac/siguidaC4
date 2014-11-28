@@ -1,0 +1,30 @@
+<%= simple_form_for @naissance, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :date_n %>
+  <%= f.input :nom %>
+  <%= f.input :prenom %>
+  <%= f.input :sexe %>
+  <%= f.input :local %>
+  <%= f.input :nom_prenom_pere %>
+  <%= f.input :domicil_pere %>
+  <%= f.input :date_nai_pere %>
+  <%= f.input :nationalite_pere %>
+  <%= f.input :profession_pere %>
+  <%= f.input :nom_prenom_mere %>
+  <%= f.input :domicil_mere %>
+  <%= f.input :date_nai_mere %>
+  <%= f.input :nationalite_mere %>
+  <%= f.input :profession_mere %>
+  <%= f.input :nom_prenom_declare %>
+  <%= f.input :domicil_declare %>
+  <%= f.input :date_nai_declare %>
+  <%= f.input :date_declare %>
+  <%= f.input :nom_prenom_officie %>
+  <%= f.input :qualite_officie %>
+  <%= f.input :date_officie %>
+  <%= f.input :n_volet %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                naissances_path, :class => 'btn' %>
+  </div>
+<% end %>

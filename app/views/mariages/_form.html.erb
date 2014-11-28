@@ -1,0 +1,94 @@
+<%= simple_form_for @mariage, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <div class="row row-1">
+    <div class="col-sm-4">
+      <%= f.input :n_volet %>
+
+    </div>
+  </div>
+
+  <hr />
+
+
+  <div class="row">
+    <div class="col-sm-4">
+      <!-- //Information sur le  mari -->
+      <h3>Information sur le mari</h3>
+      <%= f.input :nom_mari %>
+      <%= f.input :prenom_mari %>
+      <%= f.input :date_nai_mari, :label => 'Date naissance' %>
+      <%= f.input :lieu_nai_mari, :label => 'Lieu naissance' %>
+      <%= f.input :profession_mari, :label => 'Profession' %>
+      <%= f.input :domicil_mari, :label => 'Domicil' %>
+    </div>
+    <div class="col-sm-4">
+      <!-- //Information sur parent de mari -->
+      <h3>Information sur parent mari</h3>
+
+      <%= f.input :nom_prenom_pere_mari %>
+      <%= f.input :nom_prenom_mere_mari %>
+
+      <!-- //Information sur parent de la marie -->  
+      <h3>Information sur parent marie</h3>
+
+      <%= f.input :nom_prenom_pere_marie %>
+      <%= f.input :nom_prenom_mere_marie %>
+      <%= f.input :consente_parent %>
+      <%= f.input :dot %>
+    </div>
+    <div class="col-sm-4">
+      <!-- //Information sur la marie -->
+      <h3>Information sur la marie</h3>
+
+      <%= f.input :nom_marie %>
+      <%= f.input :prenom_marie %>
+      <%= f.input :date_nai_marie %>
+      <%= f.input :lieu_nai_marie %>
+      <%= f.input :profession_marie %>
+      <%= f.input :domicil_marie %>
+    </div>
+  </div><!-- row-1 -->
+
+  <hr />
+
+  <div class="row row-2">
+    <div class="col-sm-4">
+      <!-- //Information sur temoin de mari -->
+      <h3>Information sur temoin de mari</h3>
+
+      <%= f.input :nom_prenom_tm_mari %>
+      <%= f.input :date_nai_tm_mari %>
+      <%= f.input :lieu_nai_tm_mari %>
+      <%= f.input :domicil_tm_mari %>
+    </div>
+
+    <div class="col-sm-4">
+      <!-- //Information sur officier -->
+      <h3>Information sur officier</h3>
+
+      <%= f.input :nom_prenom_officie %>
+      <%= f.input :qualite_officie %>
+      <%= f.input :date_officie %>
+    </div>
+
+    <div class="col-sm-4">
+      <!-- //Information sur temoin de mari -->
+      <h3>Information sur temoin de marie</h3>
+
+      <%= f.input :nom_prenom_tm_marie %>
+      <%= f.input :date_nai_tm_marie %>
+      <%= f.input :lieu_nai_tm_marie %>
+      <%= f.input :domicil_tm_marie %>
+    </div>
+  </div><!-- row-2 -->
+  
+
+<hr/>
+  
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mariages_path, :class => 'btn' %>
+  </div>
+<% end %>

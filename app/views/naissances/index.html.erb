@@ -1,0 +1,84 @@
+<%- model_class = Naissance -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:n_volet) %></th>
+      <th><%= model_class.human_attribute_name(:date_naissance) %></th>
+      <th><%= model_class.human_attribute_name(:nom) %></th>
+      <th><%= model_class.human_attribute_name(:prenom) %></th>
+      <th><%= model_class.human_attribute_name(:sexe) %></th>
+      <!--
+      <th><%= model_class.human_attribute_name(:local) %></th>
+      <th><%= model_class.human_attribute_name(:nom_prenom_pere) %></th>
+      <th><%= model_class.human_attribute_name(:domicil_pere) %></th>
+      <th><%= model_class.human_attribute_name(:date_nai_pere) %></th>
+      <th><%= model_class.human_attribute_name(:nationalite_pere) %></th>
+      <th><%= model_class.human_attribute_name(:profession_pere) %></th>
+      <th><%= model_class.human_attribute_name(:nom_prenom_mere) %></th>
+      <th><%= model_class.human_attribute_name(:domicil_mere) %></th>
+      <th><%= model_class.human_attribute_name(:date_nai_mere) %></th>
+      <th><%= model_class.human_attribute_name(:nationalite_mere) %></th>
+      <th><%= model_class.human_attribute_name(:profession_mere) %></th>
+      <th><%= model_class.human_attribute_name(:nom_prenom_declare) %></th>
+      <th><%= model_class.human_attribute_name(:domicil_declare) %></th>
+      <th><%= model_class.human_attribute_name(:date_nai_declare) %></th>
+      <th><%= model_class.human_attribute_name(:date_declare) %></th>
+      <th><%= model_class.human_attribute_name(:nom_prenom_officie) %></th>
+      <th><%= model_class.human_attribute_name(:qualite_officie) %></th>
+      <th><%= model_class.human_attribute_name(:date_officie) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    -->
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @naissances.each do |naissance| %>
+      <tr>
+        <td><%= link_to naissance.id, naissance_path(naissance) %></td>
+        <td><%= naissance.n_volet %></td>
+        <td><%= naissance.date_n %></td>
+        <td><%= naissance.nom %></td>
+        <td><%= naissance.prenom %></td>
+        <td><%= naissance.sexe %></td>
+        <!--
+        <td><%= naissance.local %></td>
+        <td><%= naissance.nom_prenom_pere %></td>
+        <td><%= naissance.domicil_pere %></td>
+        <td><%= naissance.date_nai_pere %></td>
+        <td><%= naissance.nationalite_pere %></td>
+        <td><%= naissance.profession_pere %></td>
+        <td><%= naissance.nom_prenom_mere %></td>
+        <td><%= naissance.domicil_mere %></td>
+        <td><%= naissance.date_nai_mere %></td>
+        <td><%= naissance.nationalite_mere %></td>
+        <td><%= naissance.profession_mere %></td>
+        <td><%= naissance.nom_prenom_declare %></td>
+        <td><%= naissance.domicil_declare %></td>
+        <td><%= naissance.date_nai_declare %></td>
+        <td><%= naissance.date_declare %></td>
+        <td><%= naissance.nom_prenom_officie %></td>
+        <td><%= naissance.qualite_officie %></td>
+        <td><%= naissance.date_officie %></td>
+        <td><%=l naissance.created_at %></td>
+      -->
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_naissance_path(naissance), :class => 'btn btn-primary btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      naissance_path(naissance),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-danger btn-xs' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_naissance_path,
+            :class => 'btn btn-primary' %>

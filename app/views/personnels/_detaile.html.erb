@@ -2,10 +2,6 @@
 
   <div class="page-header row">
     <div class="col-sm-10"> 
-     <!-- <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-     <h1><%= @personnel.n_decision + '   ' + @personnel.n_mle %></h1>-->
-     <h1><%= @personnel.nom + '   ' + @personnel.prenom %></h1>
-
       <div class="form-actions">
         <%= link_to t('.back', :default => t("helpers.links.back")),
                     personnels_path, :class => 'btn'  %>
@@ -17,6 +13,10 @@
                     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                     :class => 'btn btn-danger' %>
       </div>
+     <!-- <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+     <h1><%= @personnel.n_decision + '   ' + @personnel.n_mle %></h1>-->
+     <h1><%= @personnel.nom + '   ' + @personnel.prenom %></h1>
+
     </div>
     <div class="col-sm-2">
         <% if @personnel.cover.exists? %>
@@ -30,7 +30,7 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:n_decision) %>:</strong></dt>
   <dd><%= @personnel.n_decision %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:n_mle) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:n_matricule) %>:</strong></dt>
   <dd><%= @personnel.n_mle %></dd>
   <dt><strong><%= model_class.human_attribute_name(:n_nina) %>:</strong></dt>
   <dd><%= @personnel.n_nina %></dd>
@@ -38,41 +38,41 @@
   <dd><%= @personnel.nom %></dd>
   <dt><strong><%= model_class.human_attribute_name(:prenom) %>:</strong></dt>
   <dd><%= @personnel.prenom %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_nai) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:date_naissance) %>:</strong></dt>
   <dd><%= @personnel.date_nai.strftime("%d %b %Y") %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:lieu_nai) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:lieu_naissance) %>:</strong></dt>
   <dd><%= @personnel.lieu_nai %></dd>
   <dt><strong><%= model_class.human_attribute_name(:sexe) %>:</strong></dt>
   <dd><%= @personnel.sexe %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:situ_f) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:situation_familiale) %>:</strong></dt>
   <dd><%= @personnel.situ_f %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:nb_enf) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:Nb_enfant) %>:</strong></dt>
   <dd><%= @personnel.nb_enf %></dd>
   <dt><strong><%= model_class.human_attribute_name(:corps) %>:</strong></dt>
   <dd><%= @personnel.corps %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:em_occ) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:emploi_occupé) %>:</strong></dt>
   <dd><%= @personnel.em_occ %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
   <dd><%= @personnel.phone %></dd>
   <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
   <dd><%= @personnel.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:compte_banc) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:compte_bancaire) %>:</strong></dt>
   <dd><%= @personnel.compte_banc %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
   <dd><%= @personnel.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_recr) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:date_recrutement) %>:</strong></dt>
   <dd><%= @personnel.date_recr %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:salaire_b) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:salaire_brute) %>:</strong></dt>
   <dd><%= @personnel.salaire_b %></dd>
   <dt><strong><%= model_class.human_attribute_name(:regime_matrimonial) %>:</strong></dt>
   <dd><%= @personnel.regime_matrimonial %></dd>
   <dt><strong><%= model_class.human_attribute_name(:nom_prenom_pere) %>:</strong></dt>
   <dd><%= @personnel.nom_prenom_pere %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_nai_pere) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:date_naissance_pere) %>:</strong></dt>
   <dd><%= @personnel.date_nai_pere %></dd>
   <dt><strong><%= model_class.human_attribute_name(:nom_prenom_mere) %>:</strong></dt>
   <dd><%= @personnel.nom_prenom_mere %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_nai_mere) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:date_naissance_mere) %>:</strong></dt>
   <dd><%= @personnel.date_nai_mere %></dd>
   <dt><strong><%= model_class.human_attribute_name(:etat) %>:</strong></dt>
   <dd><%= @personnel.etat %></dd>

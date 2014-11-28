@@ -1,0 +1,79 @@
+<%- model_class = Mariage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nom_mari) %>:</strong></dt>
+  <dd><%= @mariage.nom_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prenom_mari) %>:</strong></dt>
+  <dd><%= @mariage.prenom_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai_mari) %>:</strong></dt>
+  <dd><%= @mariage.date_nai_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lieu_nai_mari) %>:</strong></dt>
+  <dd><%= @mariage.lieu_nai_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:profession_mari) %>:</strong></dt>
+  <dd><%= @mariage.profession_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:domicil_mari) %>:</strong></dt>
+  <dd><%= @mariage.domicil_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_pere_mari) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_pere_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_mere_mari) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_mere_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_tm_mari) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_tm_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai_tm_mari) %>:</strong></dt>
+  <dd><%= @mariage.date_nai_tm_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lieu_nai_tm_mari) %>:</strong></dt>
+  <dd><%= @mariage.lieu_nai_tm_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:domicil_tm_mari) %>:</strong></dt>
+  <dd><%= @mariage.domicil_tm_mari %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_marie) %>:</strong></dt>
+  <dd><%= @mariage.nom_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prenom_marie) %>:</strong></dt>
+  <dd><%= @mariage.prenom_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai_marie) %>:</strong></dt>
+  <dd><%= @mariage.date_nai_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lieu_nai_marie) %>:</strong></dt>
+  <dd><%= @mariage.lieu_nai_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:profession_marie) %>:</strong></dt>
+  <dd><%= @mariage.profession_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:domicil_marie) %>:</strong></dt>
+  <dd><%= @mariage.domicil_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_pere_marie) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_pere_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_mere_marie) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_mere_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:consente_parent) %>:</strong></dt>
+  <dd><%= @mariage.consente_parent %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_tm_marie) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_tm_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_nai_tm_marie) %>:</strong></dt>
+  <dd><%= @mariage.date_nai_tm_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lieu_nai_tm_marie) %>:</strong></dt>
+  <dd><%= @mariage.lieu_nai_tm_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:domicil_tm_marie) %>:</strong></dt>
+  <dd><%= @mariage.domicil_tm_marie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dot) %>:</strong></dt>
+  <dd><%= @mariage.dot %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nom_prenom_officie) %>:</strong></dt>
+  <dd><%= @mariage.nom_prenom_officie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:qualite_officie) %>:</strong></dt>
+  <dd><%= @mariage.qualite_officie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_officie) %>:</strong></dt>
+  <dd><%= @mariage.date_officie %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_volet) %>:</strong></dt>
+  <dd><%= @mariage.n_volet %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              mariages_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_mariage_path(@mariage), :class => 'btn btn-primary' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              mariage_path(@mariage),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

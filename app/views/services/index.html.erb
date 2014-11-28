@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nom_servie) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:nom_service) %></th>
+      
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -15,8 +15,8 @@
     <% @services.each do |service| %>
       <tr>
         <td><%= link_to service.id, service_path(service) %></td>
-        <td><%= service.nom_servie %></td>
-        <td><%=l service.created_at %></td>
+        <td><%= service.nom_service %></td>
+       
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_service_path(service), :class => 'btn btn-primary btn-xs' %>
