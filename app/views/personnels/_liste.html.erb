@@ -1,6 +1,10 @@
 <%- model_class = Personnel -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+
+  <%= link_to t('.pdf', :default => t("helpers.links.pdf")),
+              personnels_path(@personnels, format: "pdf"), :class => 'btn-xs btn-info'  %>
+
 </div>
 
 <%= search_form_for @q do |f| %>

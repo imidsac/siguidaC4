@@ -1,17 +1,43 @@
+require 'personnel_pdf.rb'
+
 class PersonnelsController < ApplicationController
   before_action :set_personnel, only: [:show, :edit, :update, :destroy]
 
   # GET /personnels
   # GET /personnels.json
   def index
-    #@personnels = Personnel.all
+    @personnelspdf = Personnel.all
     @q = Personnel.paginate(:page => params[:page], :per_page => 10).search(params[:q])
     @personnels = @q.result
+
+    ##pdf
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = PersonnelsPdf.new(@personnelspdf)
+        send_data pdf.render, filename: 'personnels.pdf', type: 'application/pdf'
+      end
+    end
+
+
   end
 
   # GET /personnels/1
   # GET /personnels/1.json
   def show
+
+    ##pdf
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = PersonnelPdf.new(@personnel)
+        send_data pdf.render, 
+        filename: 'cv.pdf', 
+        type: 'application/pdf',
+        disposition: "inline"
+      end
+    end
+
   end
 
   # GET /personnels/new

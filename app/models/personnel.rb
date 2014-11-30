@@ -1,5 +1,5 @@
 class Personnel < ActiveRecord::Base
-	default_scope {order(:nom)}
+	default_scope {order(:id)}
 
 	belongs_to :centre
 	belongs_to :service
