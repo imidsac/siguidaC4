@@ -27,6 +27,8 @@ class CreatePersonnels < ActiveRecord::Migration
       t.string :etat
       t.references :service, index: true
       t.references :centre, index: true
+      t.references :category, index: true
+      t.integer :indice
 
       t.timestamps
     end

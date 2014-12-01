@@ -25,13 +25,14 @@ ActiveRecord::Schema.define(version: 20141130111928) do
   end
 
   create_table "deces", force: true do |t|
+    t.string   "n_volet"
     t.datetime "date_dc"
     t.string   "local"
     t.string   "nom"
     t.string   "prenom"
     t.datetime "date_nai"
     t.string   "lieu_nai"
-    t.string   "sexe"
+    t.string   "sexe",               limit: 1, default: "m"
     t.string   "situ_mat"
     t.string   "profession"
     t.string   "domicil"
@@ -44,12 +45,12 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.string   "nom_prenom_officie"
     t.string   "qualite_officie"
     t.datetime "date_officie"
-    t.string   "n_volet"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mariages", force: true do |t|
+    t.string   "n_volet"
     t.string   "nom_mari"
     t.string   "prenom_mari"
     t.datetime "date_nai_mari"
@@ -79,12 +80,12 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.string   "nom_prenom_officie"
     t.string   "qualite_officie"
     t.datetime "date_officie"
-    t.string   "n_volet"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "naissances", force: true do |t|
+    t.string   "n_volet"
     t.datetime "date_n"
     t.string   "nom"
     t.string   "prenom"
@@ -107,7 +108,6 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.string   "nom_prenom_officie"
     t.string   "qualite_officie"
     t.datetime "date_officie"
-    t.string   "n_volet"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.string   "n_nina"
     t.string   "nom"
     t.string   "prenom"
-    t.date     "date_nai",           default: '2014-11-27'
+    t.date     "date_nai",           default: '2014-12-01'
     t.string   "lieu_nai"
     t.string   "sexe"
     t.string   "situ_f"
@@ -149,6 +149,8 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.string   "etat"
     t.integer  "service_id"
     t.integer  "centre_id"
+    t.integer  "category_id"
+    t.integer  "indice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cover_file_name"
@@ -157,6 +159,7 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.datetime "cover_updated_at"
   end
 
+  add_index "personnels", ["category_id"], name: "index_personnels_on_category_id", using: :btree
   add_index "personnels", ["centre_id"], name: "index_personnels_on_centre_id", using: :btree
   add_index "personnels", ["service_id"], name: "index_personnels_on_service_id", using: :btree
 
@@ -167,6 +170,8 @@ ActiveRecord::Schema.define(version: 20141130111928) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "nom",                                 null: false
+    t.string   "prenom",                              null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
