@@ -1,0 +1,8 @@
+Description:
+    Explain the generator
+
+Example:
+    rails generate category_prs Thing
+
+    This will create:
+        what/will/it/create

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130111928) do
+ActiveRecord::Schema.define(version: 20141202235038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20141130111928) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "echellons", force: true do |t|
+    t.integer  "persocla_id"
+    t.integer  "num_echellon"
+    t.decimal  "salaire_indice"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "echellons", ["persocla_id"], name: "index_echellons_on_persocla_id", using: :btree
 
   create_table "mariages", force: true do |t|
     t.string   "n_volet"
@@ -122,13 +132,29 @@ ActiveRecord::Schema.define(version: 20141130111928) do
 
   add_index "permissions", ["personnel_id"], name: "index_permissions_on_personnel_id", using: :btree
 
+  create_table "persocates", force: true do |t|
+    t.string   "nom_cate"
+    t.string   "type_cat"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "persoclas", force: true do |t|
+    t.integer  "persocate_id"
+    t.integer  "num_cla"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "persoclas", ["persocate_id"], name: "index_persoclas_on_persocate_id", using: :btree
+
   create_table "personnels", force: true do |t|
     t.string   "n_decision"
     t.string   "n_mle"
     t.string   "n_nina"
     t.string   "nom"
     t.string   "prenom"
-    t.date     "date_nai",           default: '2014-12-01'
+    t.date     "date_nai",           default: '2014-12-02'
     t.string   "lieu_nai"
     t.string   "sexe"
     t.string   "situ_f"

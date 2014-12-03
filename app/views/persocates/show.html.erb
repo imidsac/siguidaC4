@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom cate:</strong>
+  <%= @persocate.nom_cate %>
+</p>
+
+<p>
+  <strong>Type cat:</strong>
+  <%= @persocate.type_cat %>
+</p>
+
+<%= link_to 'Edit', edit_persocate_path(@persocate) %> |
+<%= link_to 'Back', persocates_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Persocla:</strong>
+  <%= @echellon.persocla %>
+</p>
+
+<p>
+  <strong>Num echellon:</strong>
+  <%= @echellon.num_echellon %>
+</p>
+
+<p>
+  <strong>Salaire indice:</strong>
+  <%= @echellon.salaire_indice %>
+</p>
+
+<%= link_to 'Edit', edit_echellon_path(@echellon) %> |
+<%= link_to 'Back', echellons_path %>

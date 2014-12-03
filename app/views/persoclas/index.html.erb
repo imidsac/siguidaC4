@@ -1,0 +1,27 @@
+<h1>Listing persoclas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Persocate</th>
+      <th>Num cla</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @persoclas.each do |persocla| %>
+      <tr>
+        <td><%= persocla.persocate %></td>
+        <td><%= persocla.num_cla %></td>
+        <td><%= link_to 'Show', persocla %></td>
+        <td><%= link_to 'Edit', edit_persocla_path(persocla) %></td>
+        <td><%= link_to 'Destroy', persocla, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Persocla', new_persocla_path %>
